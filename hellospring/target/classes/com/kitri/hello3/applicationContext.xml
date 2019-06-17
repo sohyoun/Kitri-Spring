@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<bean id="hd" class="com.kitri.hello3.HelloDao"/>
+	<bean id="hs" class="com.kitri.hello3.HelloServiceKor">
+		<constructor-arg ref="hd"/>
+	</bean>
+	<!-- <bean id="hs" class="com.kitri.hello3.HelloServiceKor"> 얘에 의해 객체 생성된다.
+		<property name="helloDao" ref="hd"/> 여기서 만든 객체를 setter에다 자동으로 넣어줌
+	</bean> -->
+	<bean id="hs1" class="com.kitri.hello3.HelloServiceEng"/>
+</beans>
