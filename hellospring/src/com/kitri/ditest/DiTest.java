@@ -30,5 +30,9 @@ public class DiTest {
 		MemberDto m6 = context.getBean("m6", MemberDto.class);
 		System.out.println("--------------------m6-----------------------");
 		System.out.println(m6);
+		
+		MemberDto m7 = context.getBean("m7", MemberDto.class);
+		System.out.println("--------------------m7-----------------------");
+		System.out.println(m7);
 	}
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 	
 	<bean id="m1" class="com.kitri.ditest.MemberDto">
@@ -42,4 +43,30 @@
 		<constructor-arg value="서울시 구로구 구로디지털로 34길 코오롱싸이언스벨리 1차"/>
 		<constructor-arg value="4층 한국정보기술연구원 4강의장"/>
 	</bean>
+	
+	<bean id="m6" class="com.kitri.ditest.MemberDto">
+		<property name="id" value="hong"/>	<!-- get과 set 만들 때 property 이름 유의하기! String id 했다고 id를 쓰면 안되고 getId2 했으면 id2가 property! -->
+		<property name="name" value="홍길동"/>
+		<property name="addressDto" ref="address2"/>
+		<property name="money" value="100000"/>
+		<property name="age" value="25"/>
+	</bean>
+	<bean id="address2" class="com.kitri.ditest.AddressDto">
+		<property name="address" value="234567"/>
+		<property name="addressDetail" value="4층 한국정보기술연구원 4강의장"/>
+		<property name="zipcode" value="4층 한국정보기술연구원 4강의장"/>
+	</bean>
+	
+	<bean id="m7" class="com.kitri.ditest.MemberDto"
+		p:id="java"
+		p:name="이순신"
+		p:age="33"
+		p:money="100000"
+		p:addressDto-ref="address3"
+	/>
+	<bean id="address3" class="com.kitri.ditest.AddressDto"
+		p:zipcode="12345"
+		p:address="전라남도 여수시 여수공원"
+		p:addressDetail="1번지 305호"
+	/>
 </beans>
